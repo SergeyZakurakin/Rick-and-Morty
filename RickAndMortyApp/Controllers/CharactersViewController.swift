@@ -18,12 +18,20 @@ final class CharactersViewController: UITableViewController {
     private var image: String?
     private var characterImages: [UIImage] = []
     var infoCharacter: [String] = []
+    var nextCharacter: String?
+    var prevCharacter: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDataAndUpdateTable()
-
     }
+    
+    
+    
+    @IBAction func updateData(_ sender: UIBarButtonItem) {
+        sender.tag == 1 ? nextCharacter : prevCharacter
+    }
+    
     
     
     
@@ -42,6 +50,8 @@ final class CharactersViewController: UITableViewController {
                 names = rickAndMorty?.results.map { $0.name } ?? []
                 gender = rickAndMorty?.results.map { $0.gender} ?? []
                 infoCharacter = rickAndMorty?.results.map {$0.description} ?? []
+                nextCharacter = rickAndMorty?.info.next
+                prevCharacter = rickAndMorty?.info.prev
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData() // Обновляем таблицу после получения данных
                 }

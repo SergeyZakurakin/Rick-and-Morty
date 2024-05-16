@@ -34,7 +34,18 @@
                             <outlet property="delegate" destination="Prd-1o-Jz0" id="3FA-ik-v5l"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Characters" id="aHn-Kt-YvD"/>
+                    <navigationItem key="navigationItem" title="Characters" id="aHn-Kt-YvD">
+                        <barButtonItem key="leftBarButtonItem" title="Prev" id="Rhp-Xi-2Ax">
+                            <connections>
+                                <action selector="updateData:" destination="Prd-1o-Jz0" id="lp2-bI-Tdn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="Tdf-PH-ccQ">
+                            <connections>
+                                <action selector="updateData:" destination="Prd-1o-Jz0" id="qcM-aU-TVW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iI-lS-Fez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
