@@ -58,6 +58,7 @@ final class NetworkManager {
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5)
         let dataTask = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self else {return}
           guard error == nil,
             let data = data,
             let response = response as? HTTPURLResponse,

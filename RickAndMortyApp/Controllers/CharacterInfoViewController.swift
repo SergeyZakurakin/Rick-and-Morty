@@ -7,17 +7,12 @@
 
 import UIKit
 
-class CharacterInfoViewController: UIViewController {
+final class CharacterInfoViewController: UIViewController {
 
-    
-    
     @IBOutlet var characterImage: UIImageView!
-    
     @IBOutlet var characterDescription: UILabel!
     
     var character: String!
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

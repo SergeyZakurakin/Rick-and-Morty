@@ -27,7 +27,7 @@ final class CharactersViewController: UITableViewController {
     }
     
     
-    
+    //
     @IBAction func updateData(_ sender: UIBarButtonItem) {
         sender.tag == 1 ? nextCharacter : prevCharacter
     }
@@ -138,8 +138,6 @@ final class CharactersViewController: UITableViewController {
             content.secondaryText = gender[indexPath.row]
             //                    content.image = characterImages[indexPath.row]
             cell.contentConfiguration = content
-            
-            // Вызов функции для загрузки изображения и обновления ячейки
             
             return cell
         }
